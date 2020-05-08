@@ -1,5 +1,8 @@
 <template>
-    <div>登录页</div>
+    <div>
+        登录页
+        <p>{{ $t("title") }}</p>
+    </div>
 </template>
 
 <script>
