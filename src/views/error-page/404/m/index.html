@@ -1,0 +1,97 @@
+﻿<!--
+	大佬js里面的东西就不要动了，这样就可以了 js是移植别人的缺一不可
+	有问题联系QQ723445110
+	本人使用的网站编辑是HBuilder 可以百度搜索一下，比DW好用多了
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>您访问的网页出错啦！</title>
+
+		<meta name="description" content="Some ideas for modern button styles and effects" />
+		<meta name="keywords" content="button, effect, hover, style, inspiration, web design" />
+		<meta name="author" content="Codrops" />
+   		<meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8, target-densitydpi=low-dpi" />  
+
+		<link href="img/15.0904011.ico" mce_href="favicon.ico" rel="shortcut icon" type="img/15.0904011.ico" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.beattext.js"></script>
+		<script type="text/javascript" src="js/easying.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		  
+		  <script type="text/javascript">
+  		var system ={};  
+    	var p = navigator.platform;       
+        system.win = p.indexOf("Win") == 0;  
+        system.mac = p.indexOf("Mac") == 0;  
+       system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);     
+       if(system.win||system.mac||system.xll){//如果是电脑跳转到
+               window.location.href="../index.html";  
+       }else{  //如果是手机,跳转到
+              window.location.href="#";  
+        }//上面代码是判断是手机端还是PC端
+ </script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+		$('p#roloadText').beatText({isAuth:true,beatHeight:"1em",isRotate:false,upTime:100,downTime:100});
+		});
+		</script>
+	</head>
+	<body>
+		
+		<div class="logo" id="a" onclick="a();" title="点击我有惊喜！">
+				<img src="img/20171216094159_QaLXP.jpeg">
+			</div>
+			<br /><br />
+			<div class="container">
+		<p id="roloadText">网页维护中...</p>
+	</div>
+<center>
+		<div class="body_buttom_r_gg">
+			<center>
+			<h2 class="gg_gg">
+				网站维护公告：
+			</h2>
+			<font class="gg_font3">距离网站开启日倒计时：</font><br /><br />
+</center>
+			<div id="CountMsg" class="HotDate"> 
+					<span id="t_d" class="gg_sj">00天</span> 
+					<span id="t_h" class="gg_sj">00时</span> 
+					<span id="t_m" class="gg_sj">00分</span> 
+					<span id="t_s" class="gg_sj">00秒</span> 
+			</div> 
+			<script type="text/javascript"> 
+				function getRTime(){ 
+				var EndTime= new Date('2018/2/18 20:18:00'); //截止时间 
+				var NowTime = new Date(); 
+				var t =EndTime.getTime() - NowTime.getTime(); 
+				var d=Math.floor(t/1000/60/60/24); 
+				var h=Math.floor(t/1000/60/60%24); 
+				var m=Math.floor(t/1000/60%60); 
+				var s=Math.floor(t/1000%60); 
+				document.getElementById("t_d").innerHTML = d + "天"; 
+				document.getElementById("t_h").innerHTML = h + "时"; 
+				document.getElementById("t_m").innerHTML = m + "分"; 
+				document.getElementById("t_s").innerHTML = s + "秒"; 
+				} 
+				setInterval(getRTime,1000); 
+		</script> 
+			</center>
+</div>		
+<audio autoplay loop id="music">
+<source src="../music/music.mp3" type="audio/mpeg">
+</audio>
+<script>   
+   function a(){
+     var audio = document.getElementById('music'); 
+     if(audio.paused){                 
+         audio.play();//audio.play();// 播放  
+     }
+     else{
+          audio.pause();// 暂停
+     } 
+   }
+</script>
+	</body>
+</html>
