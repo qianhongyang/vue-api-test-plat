@@ -40,6 +40,15 @@ const router = new Router({
                 component: () => import('@/views/error-page/500.vue')
             },
             {
+                path: '/c',
+                name: 'error_404',
+                meta: {
+                    hideInMenu: true,
+                    title:"您访问的网页出错啦！- 404"
+                },
+                component: () => import('@/views/error-page/404/404_cute.vue')
+            },
+            {
                 path: '*',
                 name: 'error_404',
                 meta: {

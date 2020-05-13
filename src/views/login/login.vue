@@ -9,13 +9,12 @@
 <script>
     export default {
         name: "login",
-        methods:{
-            get_url:function () {
-                window.location.href = "https://rccchina.zoom.us/j/94464223784"
+        methods: {
+            get_url: function () {
+                window.location.href = "http://exmail.qq.com"
             }
         }
     }
-
 </script>
 
 <style scoped>
