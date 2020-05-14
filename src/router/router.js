@@ -24,6 +24,14 @@ const router = new Router({
                 component: () => import(/* webpackChunkName: "about" */ '@/views/layout/layout.vue')
             },
             {
+                path: '/test',
+                name: 'test',
+                meta: {
+                    title: 'test',
+                },
+                component: () => import(/* webpackChunkName: "about" */ '@/views/test')
+            },
+            {
                 path: '/401',
                 name: 'error_401',
                 meta: {
@@ -40,21 +48,14 @@ const router = new Router({
                 component: () => import('@/views/error-page/500.vue')
             },
             {
-                path: '/c',
-                name: 'error_404',
-                meta: {
-                    hideInMenu: true,
-                    title:"您访问的网页出错啦！- 404"
-                },
-                component: () => import('@/views/error-page/404/404_cute.vue')
-            },
-            {
                 path: '*',
                 name: 'error_404',
                 meta: {
-                    hideInMenu: true
+                    hideInMenu: true,
+                    title:"您访问的网页出错啦！- 404",
+                    icon:"@/assets/images/error-page/cute_girl.ico"
                 },
-                component: () => import('@/views/error-page/404.vue')
+                component: () => import('@/views/error-page/404/404_cute.vue')
             },
         ]
     }
