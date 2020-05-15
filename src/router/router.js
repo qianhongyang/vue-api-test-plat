@@ -18,13 +18,14 @@ const router = new Router({
             {
                 path: '/home',
                 name: 'home',
+                //redirect:"/test",
                 meta: {
                     title: '首页',
                 },
                 component: () => import(/* webpackChunkName: "about" */ '@/views/layout/layout.vue')
             },
             {
-                path: '/test',
+                path: '/:author',
                 name: 'test',
                 meta: {
                     title: 'test',
