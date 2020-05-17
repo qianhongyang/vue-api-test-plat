@@ -12,6 +12,7 @@ const router = new Router({
                 name: 'login',
                 meta: {
                     title: '登录',
+
                 },
                 component: () => import(/* webpackChunkName: "login" */ '@/views/login/login.vue')
             },
@@ -21,11 +22,25 @@ const router = new Router({
                 //redirect:"/test",
                 meta: {
                     title: '首页',
+
                 },
-                component: () => import(/* webpackChunkName: "about" */ '@/views/layout/layout.vue')
+                component: () => import(/* webpackChunkName: "about" */ '@/views/layout/home.vue'),
+                // children:[{
+                //     path:'/about',
+                //     name:'about',
+                //     component: () => import(/* webpackChunkName: "about" */ '@/views/About')
+                // }]
             },
             {
-                path: '/:author',
+                path:'/about',
+                name:'about',
+                meta: {
+                    title: 'about',
+                },
+                component: () => import(/* webpackChunkName: "about" */ '@/views/About')
+            },
+            {
+                path: '/test',
                 name: 'test',
                 meta: {
                     title: 'test',

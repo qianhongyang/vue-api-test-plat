@@ -51,18 +51,18 @@
 <template>
     <div class="layout">
         <Layout>
-            <qheader></qheader>
+            <Qheader/>
             <hr style='border:1px inset #d7dde4;'> <!--分割线-->
             <Layout :style="{minHeight: '100vh'}">
                 <Sider ref="side1" collapsible :collapsed-width="78" v-model="isCollapsed">
                     <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
-                        <Qside_menu></Qside_menu>
+                        <Qside_menu/>
                     </Menu>
                 </Sider>
                 <Layout :style="{padding: '0 24px 24px'}">
                     <qbreadcrumb/>
-                    <Content :style="{padding: '24px', minHeight: '532px', background: '#fff'}">
-                        <router-view></router-view>
+                    <Content :style="{padding: '24px', minHeight: '532px', background: '#fff'}" v-if="homeShow">
+                        <router-view/>
                     </Content>
                 </Layout>
             </Layout>
@@ -77,7 +77,8 @@
     export default {
         data() {
             return {
-                isCollapsed: false
+                isCollapsed: false,
+                homeShow:false
             };
         },
         components: {
@@ -97,6 +98,13 @@
                     'menu-item',
                     this.isCollapsed ? 'collapsed-menu' : ''
                 ]
+            }
+        },
+        watch: {
+            $route() {
+                if (this.$route.path !== "/home") {
+                    this.homeShow = true;
+                }
             }
         }
     }
