@@ -3,18 +3,22 @@
         <div v-if="homeShow">
             <Home/>
         </div>
-        <router-view/>
+        <div v-if="baseShow">
+            <router-view/>
+        </div>
     </div>
 
 </template>
 
 <script>
     import home from "@/views/layout/home";
-
+    //var reg = /^error.*/;
     export default {
+
         data() {
             return {
-                homeShow: true
+                homeShow: true,
+                baseShow: true
             }
         },
         components: {
@@ -27,10 +31,12 @@
         },
         watch: {
             $route() {
-                if (this.$route.path === "/login" || this.$route.path ===  "/") {
+                if (this.$route.name === "error_404" || this.$route.path === "/") {
                     this.homeShow = false;
+                    this.baseShow= true;
                 } else {
                     this.homeShow = true;
+                    this.baseShow = false;
                 }
             }
         }
