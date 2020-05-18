@@ -53,15 +53,15 @@
         <Layout>
             <Qheader/>
             <hr style='border:1px inset #d7dde4;'> <!--分割线-->
-            <Layout :style="{minHeight: '100vh'}">
-                <Sider ref="side1" collapsible :collapsed-width="78" v-model="isCollapsed">
+            <Layout  :style="{minHeight: '100vh'}">
+                <Sider  ref="side1" collapsible :collapsed-width="78" v-model="isCollapsed">
                     <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
                         <Qside_menu/>
                     </Menu>
                 </Sider>
                 <Layout :style="{padding: '0 24px 24px'}">
                     <qbreadcrumb/>
-                    <Content :style="{padding: '24px', minHeight: '532px', background: '#fff'}" v-if="homeShow">
+                    <Content :style="{padding: '24px', minHeight: '532px', background: '#fff'}" >
                         <router-view/>
                     </Content>
                 </Layout>
@@ -74,6 +74,7 @@
     import Qside_menu from "@/views/layout/side-menu/side-menu";
     import Qbreadcrumb from "@/views/layout/breadcrumb/Qbreadcrumb";
 
+
     export default {
         data() {
             return {
@@ -85,6 +86,7 @@
             Qheader,
             Qside_menu,
             Qbreadcrumb,
+
         },
 
         methods: {

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Submenu name="1">
+        <Submenu  name="1">
             <template slot="title">
                 <Icon type="ios-navigate"></Icon>
                 <span>{{ $t("home.nav.Item1.I") }}</span>
@@ -16,7 +16,7 @@
                 </MenuItem>
             </router-link>
         </Submenu>
-        <Submenu name="2">
+        <Submenu  name="2">
             <template slot="title">
                 <Icon type="ios-keypad"></Icon>
                 <span>{{ $t("home.nav.Item2.I") }}</span>
