@@ -55,7 +55,7 @@
             <hr style='border:1px inset #d7dde4;'> <!--分割线-->
             <Layout  :style="{minHeight: '100vh'}">
                 <Sider  ref="side1" collapsible :collapsed-width="78" v-model="isCollapsed">
-                    <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
+                    <Menu   width="auto" :class="menuitemClasses" :theme="theme3" :active-name="1-1" accordion="true" >
                         <Qside_menu/>
                     </Menu>
                 </Sider>
@@ -79,14 +79,13 @@
         data() {
             return {
                 isCollapsed: false,
-                homeShow:false
+                theme3: 'dark',
             };
         },
         components: {
             Qheader,
             Qside_menu,
             Qbreadcrumb,
-
         },
 
         methods: {
@@ -102,12 +101,5 @@
                 ]
             }
         },
-        watch: {
-            $route() {
-                if (this.$route.path !== "/home") {
-                    this.homeShow = true;
-                }
-            }
-        }
     }
 </script>

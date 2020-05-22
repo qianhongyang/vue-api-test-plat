@@ -5,16 +5,12 @@
                 <Icon type="ios-navigate"></Icon>
                 <span>{{ $t("home.nav.Item1.I") }}</span>
             </template>
-            <router-link to="/about" >
-                <MenuItem name="1-1">
+                <MenuItem name="1-1" to="about">
                     {{ $t("home.nav.Item1.option1") }}
                 </MenuItem>
-            </router-link>
-            <router-link to="/test" >
-                <MenuItem name="1-1">
+                <MenuItem name="1-2" to="test">
                     test
                 </MenuItem>
-            </router-link>
         </Submenu>
         <Submenu  name="2">
             <template slot="title">

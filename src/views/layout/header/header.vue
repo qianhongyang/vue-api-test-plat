@@ -5,27 +5,32 @@
                 <div><span class="plat_name_style">{{ $t("home.title") }}</span></div>
                 <div class="layout-nav">
                     <div class="user_control">
-                        <Dropdown >
+                        <Dropdown>
                             <MenuItem name="2" style="transform: translateY(-10px)">
-                                主题切换
+                                <div>
+                                    <Icon type="ios-color-palette-outline" size="20" style="transform: translateY(3px)"/>
+                                    <span style="transform: translateY(5px)">主题切换</span>
+                                </div>
                             </MenuItem>
-                            <DropdownMenu  slot="list">
-                                <DropdownItem >dark</DropdownItem>
-                                <DropdownItem >light</DropdownItem>
+                            <DropdownMenu slot="list">
+                                <DropdownItem>dark</DropdownItem>
+                                <DropdownItem>light</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
-<!--                        <MenuItem name="1">-->
-<!--                            {{userName}}-->
-<!--                        </MenuItem>-->
-                        <Dropdown style="transform: translateY(-10px)">
-                            <div >
+<!--                                                <MenuItem name="1">-->
+<!--                                                    {{userName}}-->
+<!--                                                </MenuItem>-->
+                        <Dropdown style="transform: translateY(-12px)">
+
+                            <div>
                                 <Qavatar/>
                             </div>
-                            <DropdownMenu  slot="list">
-                                <DropdownItem >个人信息</DropdownItem>
-                                <DropdownItem >打赏作者</DropdownItem>
-                                <DropdownItem >修改密码</DropdownItem>
+                            <DropdownMenu slot="list">
+                                <DropdownItem>个人信息</DropdownItem>
+                                <DropdownItem>打赏作者</DropdownItem>
+                                <DropdownItem>修改密码</DropdownItem>
                                 <DropdownItem divided @click.native="logout">
+                                    <Icon type="md-power"/>
                                     退出登录
                                 </DropdownItem>
                             </DropdownMenu>

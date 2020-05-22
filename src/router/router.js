@@ -49,28 +49,20 @@ const router = new Router({
                     },
                     children: [
                         {
-                            path: "/test",
-                            name: "test",
-                            component: () => import(/* webpackChunkName: "about" */ '@/views/test')
-                        },
-                        {
-                            path: "/about/2",
+                            path: "about/2",
                             name: "about2",
                             component: () => import(/* webpackChunkName: "about" */ '@/views/About2')
                         },
                         {
-                            path: "/about/3",
+                            path: "about/3",
                             name: "about3",
                             component: () => import(/* webpackChunkName: "about" */ '@/views/About3')
                         },
                     ]
                 },
                     {
-                        path: '/test',
-                        name: 'test',
-                        meta: {
-                            title: 'test',
-                        },
+                        path: "/test",
+                        name: "test",
                         component: () => import(/* webpackChunkName: "about" */ '@/views/test')
                     },
                 ]
