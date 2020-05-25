@@ -68,6 +68,11 @@ const router = new Router({
                 ]
             },
             {
+                path: "/t",
+                name: "t",
+                component: () => import(/* webpackChunkName: "about" */ '_c/test')
+            },
+            {
                 path: '/401',
                 name: 'error_401',
                 meta: {

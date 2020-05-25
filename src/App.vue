@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <keep-alive include="Qside_menu">
+        <keep-alive include="home">
             <router-view/>
         </keep-alive>
     </div>
@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
     export default {
         name: "app",
         data() {
