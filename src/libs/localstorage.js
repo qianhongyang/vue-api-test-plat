@@ -14,7 +14,7 @@ class LocalStorage {
      * @returns {exports}
      */
     setAge(age) {
-        this.age = age
+        this.age = age;
         return this
     }
 
@@ -24,13 +24,13 @@ class LocalStorage {
      * @param value
      */
     set(key, value) {
-        localStorage.removeItem(key)
+        localStorage.removeItem(key);
         let isObject = value instanceof Object && !(value instanceof Array)
-        let _time = new Date().getTime()
-        let _age = this.age
+        let _time = new Date().getTime();
+        let _age = this.age;
 
-        let _v = {}
-        _v.value = value
+        let _v = {};
+        _v.value = value;
         // 如果不是对象，新建一个对象把 value 存起来
         // if (!isObject) {
         //   let b = value

@@ -72,13 +72,13 @@
                     </Input>
                 </FormItem>
                 <FormItem   prop="pass">
-                    <Input class="input1" type="password" :password="loginData.password" @on-enter="handleSubmit('loginData')"  v-model="loginData.pass" placeholder="请输入密码" >
-                        <Icon type="ios-lock-outline" slot="prepend"></Icon>
+                    <Input class="input1" type="password" :password="true" @on-enter="handleSubmit('loginData')"  v-model="loginData.pass" placeholder="请输入密码" >
+                        <Icon type="ios-lock-outline" slot="prepend"/>
                     </Input>
                 </FormItem>
                 <FormItem class="form-footer">
-                    <Button style="border-color: #009688;color: #009688;" :ghost="loginData.ghost"  @keyup.enter.native="handleSubmit('loginData')" @click="handleSubmit('loginData')">Submit</Button>
-                    <Button :ghost="loginData.ghost" @click="handleReset('loginData')" style="margin-left: 8px;border-color: #009688;color: #009688;">Reset</Button>
+                    <Button style="border-color: #009688;color: #009688;" :ghost="true"  @keyup.enter.native="handleSubmit('loginData')" @click="handleSubmit('loginData')">Submit</Button>
+                    <Button :ghost="true" @click="handleReset('loginData')" style="margin-left: 8px;border-color: #009688;color: #009688;">Reset</Button>
                 </FormItem>
             </Form>
         </div>
@@ -90,8 +90,6 @@
         data () {
             return {
                 loginData: {
-                    ghost:true,
-                    password:true,
                     acct:'',
                     pass:''
                 },
@@ -116,7 +114,10 @@
                             method: 'post',//请求的方式
                             data: this.formInline//请求的表单数据
                         }).then(res => {
-                            console.info('后台返回的数据', res.data);
+                            console.info('后台返回的数据', res.data)
+                            this.$store.commit('$_setStorage', {user: this.loginData})
+                            this.$Message.success('登录成功!')
+                            this.$router.push("/home")
                         }).catch(err => {
                             console.info('报错的信息', err.response.message);
                         });

@@ -51,12 +51,14 @@ const router = new Router({
                         {
                             path: "about/2",
                             name: "about2",
-                            component: () => import(/* webpackChunkName: "about" */ '@/views/About2')
+                            component: () => import(/* webpackChunkName: "about" */ '@/views/About2'),
+                            meta: {role: 'B'}
                         },
                         {
                             path: "about/3",
                             name: "about3",
-                            component: () => import(/* webpackChunkName: "about" */ '@/views/About3')
+                            component: () => import(/* webpackChunkName: "about" */ '@/views/About3'),
+                            meta: {role: 'C'}
                         },
                     ]
                 },

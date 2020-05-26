@@ -3,7 +3,7 @@ import Vue from 'vue'
 // 导入国际化相关文件
 import VueI18n from 'vue-i18n'
 import messages from '@/i18n/index.js'
-import LocalStorage from '@/util/localstorage.js'
+import LocalStorage from '@/libs/localstorage.js'
 
 Vue.use(VueI18n);
 // 国际化，中英文
