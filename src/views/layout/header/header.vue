@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header style="padding: 0 23px">
+        <Header style="padding: 0 23px;" >
             <Menu mode="horizontal" theme="dark" :active-name="activeName">
                 <div><span class="plat_name_style">{{ $t("home.title") }}</span></div>
                 <div class="layout-nav">
@@ -17,9 +17,6 @@
                                 <DropdownItem>light</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
-<!--                                                <MenuItem name="1">-->
-<!--                                                    {{userName}}-->
-<!--                                                </MenuItem>-->
                         <Dropdown style="transform: translateY(-12px)">
 
                             <div>

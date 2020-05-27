@@ -53,8 +53,8 @@
         <Layout>
             <Qheader/>
             <hr style='border:1px inset #d7dde4;'> <!--分割线-->
-            <Layout  :style="{minHeight: '100vh'}">
-                <Sider  ref="side1" collapsible :collapsed-width="78" v-model="isCollapsed">
+            <Layout  :style="{minHeight: '100vh'}" >
+                <Sider  ref="side1" collapsible :collapsed-width="78" v-model="isCollapsed" >
                     <Menu   width="auto" :class="menuitemClasses" :theme="theme3" :active-name="1-1" :accordion="true" >
                         <Qside_menu/>
                     </Menu>

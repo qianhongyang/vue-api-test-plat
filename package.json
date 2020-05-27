@@ -12,9 +12,11 @@
     "core-js": "^3.6.4",
     "i18n": "^0.9.1",
     "iview": "^3.5.4",
+    "iview-theme": "^1.1.0",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
-    "less-loader": "^6.1.0",
+    "less": "^2.7.3",
+    "less-loader": "5.0.0",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "view-design": "^4.2.0",
@@ -45,7 +47,7 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "no-unused-vars":"off",
+      "no-unused-vars": "off",
       "vue/no-parsing-error": [
         2,
         {

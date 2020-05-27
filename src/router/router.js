@@ -38,6 +38,7 @@ const router = new Router({
                 redirect:"/about",
                 meta: {
                     title: '首页',
+                    requiresAuth: true,
                 },
                 component: () => import(/* webpackChunkName: "about" */ '@/views/layout/home.vue'),
                 children: [{
@@ -46,19 +47,20 @@ const router = new Router({
                     component: () => import(/* webpackChunkName: "about" */ '@/views/About'),
                     meta: {
                         title: 'about',
+                        requiresAuth: true,
                     },
                     children: [
                         {
                             path: "about/2",
                             name: "about2",
                             component: () => import(/* webpackChunkName: "about" */ '@/views/About2'),
-                            meta: {role: 'B'}
+                            meta: {requiresAuth: true }
                         },
                         {
                             path: "about/3",
                             name: "about3",
                             component: () => import(/* webpackChunkName: "about" */ '@/views/About3'),
-                            meta: {role: 'C'}
+                            meta: {requiresAuth: true }
                         },
                     ]
                 },
@@ -105,8 +107,6 @@ const router = new Router({
 )
 
 router.beforeEach((to, from, next) => {
-
-    /* 路由发生变化修改页面title */
     if (to.meta.title) {
         document.title = to.meta.title
     }
