@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header :class="HeaderClasses">
-            <Menu style="height: 64px;" mode="horizontal" :theme="theme()" :active-name="activeName">
+            <Menu style="height: 64px;" mode="horizontal" :theme="theme" :active-name="activeName">
                 <div><span :class="PlatNameClass">{{ $t("home.title") }}</span></div>
                 <div class="layout-nav">
                     <div class="user_control">
@@ -43,6 +43,7 @@
 
 <script>
     import avatar from "@/views/avatar/avatar";
+    import theme from "@/store/modules/theme";
 
     const prefixCls = 'layout-theme-';
     export default {
@@ -58,15 +59,15 @@
             return {
                 userName: "Dean",
                 activeName: this.$route.path,
-                // theme: this.$store.getters.getMythemeStorage,
+                theme: "dark",
             }
         },
         methods: {
-            theme() {
+            select_theme() {
                 if (this.$store.getters.getMythemeStorage) {
-                    return this.$store.getters.getMythemeStorage
+                     this.theme=this.$store.getters.getMythemeStorage
                 } else {
-                    return this.$store.getters.getMytheme
+                    this.theme=this.$store.getters.getMytheme
                 }
             },
             logout() {
@@ -74,8 +75,9 @@
             },
             changMyTheme(color) {
                 console.log("你已经点了", color);
-                this.$store.commit('ChangMyThemeState', color);
-                this.$router.go(0)
+                // this.$store.commit('ChangMyThemeState', color);
+                // this.$router.go(0)
+                this.theme=color
             },
         },
         computed: {
