@@ -9,8 +9,16 @@ export default {
         getMytheme: function (state) {
             return state.mytheme
         },
-        getMythemeStorage: function (state) {
+        getMythemeStorage: function () {
             return localStorage.getItem(key)
+        },
+        chooseTheme:function(){
+            if (this.getMythemeStorage){
+                return this.getMythemeStorage
+            }
+            else {
+                return this.getMytheme
+            }
         }
     },
     mutations:{

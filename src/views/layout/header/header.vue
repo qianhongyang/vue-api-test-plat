@@ -42,8 +42,9 @@
 </template>
 
 <script>
+    import { mapGetters, mapMutations } from 'vuex';
     import avatar from "@/views/avatar/avatar";
-    import theme from "@/store/modules/theme";
+
 
     const prefixCls = 'layout-theme-';
     export default {
@@ -59,28 +60,23 @@
             return {
                 userName: "Dean",
                 activeName: this.$route.path,
-                theme: "dark",
+                // theme:"",
             }
         },
         methods: {
-            select_theme() {
-                if (this.$store.getters.getMythemeStorage) {
-                     this.theme=this.$store.getters.getMythemeStorage
-                } else {
-                    this.theme=this.$store.getters.getMytheme
-                }
-            },
             logout() {
                 this.$router.push("/")  //退出到登录界面
             },
             changMyTheme(color) {
                 console.log("你已经点了", color);
-                // this.$store.commit('ChangMyThemeState', color);
-                // this.$router.go(0)
-                this.theme=color
+                this.$store.commit('ChangMyThemeState', color);
+                this.theme=this.$store.getters.chooseTheme;
             },
         },
         computed: {
+            ...mapGetters({
+                theme: "getMytheme",
+            }),
             /**
              * @return {string}
              */

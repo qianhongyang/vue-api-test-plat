@@ -35,46 +35,45 @@ const router = new Router({
             {
                 path: '/home',
                 name: 'home',
-                redirect:"/about",
+                redirect: "/about",
                 meta: {
                     title: '首页',
                     requiresAuth: true,
                 },
                 component: () => import(/* webpackChunkName: "about" */ '@/views/layout/home.vue'),
                 children: [{
-                    path: '/about',
-                    name: 'about',
-                    component: () => import(/* webpackChunkName: "about" */ '@/views/About'),
+                    path: '/projects',
+                    name: 'projects',
+                    component: () => import(/* webpackChunkName: "about" */ '@/views/projects/projects'),
                     meta: {
                         title: 'about',
                         requiresAuth: true,
                     },
-                    children: [
-                        {
-                            path: "about/2",
-                            name: "about2",
-                            component: () => import(/* webpackChunkName: "about" */ '@/views/About2'),
-                            meta: {requiresAuth: true }
-                        },
-                        {
-                            path: "about/3",
-                            name: "about3",
-                            component: () => import(/* webpackChunkName: "about" */ '@/views/About3'),
-                            meta: {requiresAuth: true }
-                        },
-                    ]
                 },
                     {
-                        path: "/test",
-                        name: "test",
-                        component: () => import(/* webpackChunkName: "about" */ '@/views/test')
+                        path: '/about',
+                        name: 'about',
+                        component: () => import(/* webpackChunkName: "about" */ '@/views/About'),
+                        meta: {
+                            title: 'about',
+                            requiresAuth: true,
+                        },
+                        children: [
+                            {
+                                path: "2",
+                                name: "about2",
+                                component: () => import(/* webpackChunkName: "about" */ '@/views/About2'),
+                                meta: {requiresAuth: true}
+                            },
+                            {
+                                path: "3",
+                                name: "about3",
+                                component: () => import(/* webpackChunkName: "about" */ '@/views/About3'),
+                                meta: {requiresAuth: true}
+                            },
+                        ]
                     },
                 ]
-            },
-            {
-                path: "/t",
-                name: "t",
-                component: () => import(/* webpackChunkName: "about" */ '_c/test')
             },
             {
                 path: '/401',
