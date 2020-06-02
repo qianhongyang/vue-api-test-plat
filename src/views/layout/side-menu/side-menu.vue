@@ -1,15 +1,12 @@
 <template>
     <div>
-        <Submenu name="1">
+        <Submenu name="1" :disabled="disabled">
             <template slot="title">
                 <Icon type="ios-navigate"></Icon>
                 <span>{{ $t("home.nav.Item1.I") }}</span>
             </template>
             <MenuItem name="1-1" to="about">
                 {{ $t("home.nav.Item1.option1") }}
-            </MenuItem>
-            <MenuItem name="1-2" to="test">
-                test
             </MenuItem>
             <MenuItem name="1-3" to="projects">
                 项目
@@ -39,6 +36,12 @@
 <script>
     export default {
         name: "Qside_menu",
+        props:{
+            disabled:{
+                default:false,
+                type:Boolean,
+            }
+        }
     }
 </script>
 
