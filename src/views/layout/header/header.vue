@@ -14,20 +14,15 @@
                                 </div>
                             </MenuItem>
                             <DropdownMenu slot="list">
-                                <DropdownItem @click.native="changMyTheme('dark')">dark</DropdownItem>
-                                <DropdownItem @click.native="changMyTheme('light')">light</DropdownItem>
-                                <DropdownItem @click.native="changMyTheme('green')">green</DropdownItem>
+                                <DropdownItem v-for="item in color_list" :key="item" @click.native="changMyTheme([item])">{{item}}</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                         <Dropdown style="transform: translateY(-12px)">
-
                             <div>
                                 <Qavatar/>
                             </div>
                             <DropdownMenu slot="list">
-                                <DropdownItem>个人信息</DropdownItem>
-                                <DropdownItem>打赏作者</DropdownItem>
-                                <DropdownItem>修改密码</DropdownItem>
+                                <DropdownItem v-for="item in option_list" :key="item">{{item}}</DropdownItem>
                                 <DropdownItem divided @click.native="logout">
                                     <Icon type="md-power"/>
                                     退出登录
@@ -54,13 +49,13 @@
         },
         mounted() {
             console.log(this.$store.getters.getMythemeStorage);
-            // this.$store.commit('ChangMyThemeState', this.$store.getters.getMytheme);
         },
         data() {
             return {
                 userName: "Dean",
                 activeName: this.$route.path,
-                // theme:"",
+                color_list:["dark","light","green"],
+                option_list:["个人信息","打赏作者","修改密码"],
             }
         },
         methods: {

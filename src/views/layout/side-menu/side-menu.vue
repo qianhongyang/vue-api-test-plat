@@ -20,26 +20,37 @@
             <MenuItem name="2-1">{{ $t("home.nav.Item2.option1") }}</MenuItem>
         </Submenu>
         <Submenu name="3">
-            <template slot="title">
-                <Icon type="ios-analytics"></Icon>
-                <span>{{ $t("home.nav.Item3.I") }}</span>
-            </template>
-            <MenuItem class="layout-con" name="3-1">
-                <Icon type="ios-analytics"></Icon>
-                <span>{{ $t("home.nav.Item3.option1") }}</span>
-            </MenuItem>
+            <!--            <template slot="title">-->
+            <!--                <Icon type="ios-analytics"></Icon>-->
+            <!--                <span>{{ $t("home.nav.Item3.I") }}</span>-->
+            <!--            </template>-->
+            <!--            <MenuItem class="layout-con" name="3-1">-->
+            <!--                <Icon type="ios-analytics"></Icon>-->
+            <!--                <span>{{ $t("home.nav.Item3.option1") }}</span>-->
+            <!--            </MenuItem>-->
+            <Qmenu :icon_type="icon_type" :menu_name="menu_name" :path_list="path_list"/>
         </Submenu>
     </div>
 
 </template>
 
 <script>
+    import Qmenu from "@/components/Qmenu";
+
     export default {
         name: "Qside_menu",
-        props:{
-            disabled:{
-                default:false,
-                type:Boolean,
+        components: {Qmenu},
+        props: {
+            disabled: {
+                default: false,
+                type: Boolean,
+            }
+        },
+        data() {
+            return {
+                icon_type: "ios-analytics",
+                menu_name: this.$t("home.nav.Item3.I"),
+                path_list: [{path:"about",option:this.$t("home.nav.Item3.option1")}],
             }
         }
     }
