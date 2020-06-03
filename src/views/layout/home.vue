@@ -53,15 +53,20 @@
         <Layout>
             <Qheader/>
             <hr style='border:1px inset #d7dde4;'> <!--分割线-->
-            <Layout  :style="{minHeight: '100vh'}" >
-                <Sider  ref="side1" collapsible :collapsed-width="78" v-model="isCollapsed" >
-                    <Menu   width="auto" :class="menuitemClasses" :theme="theme3" :active-name="1-1" :accordion="true" >
-                        <Qside_menu/>
+            <Layout :style="{minHeight: '100vh'}">
+                <Sider ref="side1" collapsible :collapsed-width="78" v-model="isCollapsed">
+                    <Menu width="auto" :class="menuitemClasses" :theme="theme3" :active-name="1-1" :accordion="true">
+                        <!--                      1,两者之间切换-->
+                        <!--                        <hover-drop-down v-if="isCollapsed"/>-->
+                        <!--                        <Qside_menu v-else/>-->
+                        <!--                        2,多者切换-->
+                        <component :is="comName"/>
+
                     </Menu>
                 </Sider>
                 <Layout :style="{padding: '0 24px 24px'}">
                     <qbreadcrumb/>
-                    <Content :style="{padding: '24px', minHeight: '532px', background: '#fff'}" >
+                    <Content :style="{padding: '24px', minHeight: '532px', background: '#fff'}">
                         <router-view/>
                     </Content>
                 </Layout>
@@ -73,21 +78,31 @@
     import Qheader from "@/views/layout/header/header"
     import Qside_menu from "@/views/layout/side-menu/side-menu";
     import Qbreadcrumb from "@/views/layout/breadcrumb/Qbreadcrumb";
-
+    import hoverDropDown from "@/views/layout/side-menu/hoverDropDown";
 
     export default {
         data() {
             return {
                 isCollapsed: false,
                 theme3: 'dark',
+                comName: "Qside_menu",
             };
         },
         components: {
             Qheader,
             Qside_menu,
             Qbreadcrumb,
+            hoverDropDown,
         },
-
+        watch: {
+            isCollapsed() {
+                if (this.isCollapsed) {
+                    this.comName = "hover-drop-down"
+                } else {
+                    this.comName = "Qside_menu"
+                }
+            }
+        },
         methods: {
             go(name) {
                 this.$router.push(name)

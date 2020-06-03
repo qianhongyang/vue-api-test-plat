@@ -1,18 +1,19 @@
 <template>
     <div>
         <template slot="title">
-            <Icon type="ios-navigate"></Icon>
-            <span>{{ $t("home.nav.Item1.I") }}</span>
+            <Icon :type="icon_type"/>
+            <span>{{menu_name}}</span>
         </template>
-        <MenuItem :name="menuName" :to="toRouter">
-            {{ optionName }}
+        <MenuItem v-for="item in path_list" :key="item" :to="item.path">
+            {{ item.option }}
         </MenuItem>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Qmenu"
+        name: "Qmenu",
+        props: ["icon_type", "menu_name", "path_list"],
     }
 </script>
 
