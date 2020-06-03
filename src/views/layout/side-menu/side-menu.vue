@@ -1,35 +1,8 @@
 <template>
     <div>
-        <Submenu name="1" :disabled="disabled">
-            <template slot="title">
-                <Icon type="ios-navigate"></Icon>
-                <span>{{ $t("home.nav.Item1.I") }}</span>
-            </template>
-            <MenuItem name="1-1" to="about">
-                {{ $t("home.nav.Item1.option1") }}
-            </MenuItem>
-            <MenuItem name="1-3" to="projects">
-                项目
-            </MenuItem>
-        </Submenu>
-        <Submenu name="2">
-            <template slot="title">
-                <Icon type="ios-keypad"></Icon>
-                <span>{{ $t("home.nav.Item2.I") }}</span>
-            </template>
-            <MenuItem name="2-1">{{ $t("home.nav.Item2.option1") }}</MenuItem>
-        </Submenu>
-        <Submenu name="3">
-            <!--            <template slot="title">-->
-            <!--                <Icon type="ios-analytics"></Icon>-->
-            <!--                <span>{{ $t("home.nav.Item3.I") }}</span>-->
-            <!--            </template>-->
-            <!--            <MenuItem class="layout-con" name="3-1">-->
-            <!--                <Icon type="ios-analytics"></Icon>-->
-            <!--                <span>{{ $t("home.nav.Item3.option1") }}</span>-->
-            <!--            </MenuItem>-->
-            <Qmenu :icon_type="icon_type" :menu_name="menu_name" :path_list="path_list"/>
-        </Submenu>
+        <Qmenu :sub="sub1"/>
+        <Qmenu :sub="sub2"/>
+        <Qmenu :sub="sub3"/>
     </div>
 
 </template>
@@ -48,9 +21,27 @@
         },
         data() {
             return {
-                icon_type: "ios-analytics",
-                menu_name: this.$t("home.nav.Item3.I"),
-                path_list: [{path:"about",option:this.$t("home.nav.Item3.option1")}],
+                sub1: {
+                    name:"sub1",
+                    icon_type: "ios-navigate",
+                    menu_name: this.$t("home.nav.Item1.I"),
+                    path_list: [{path: "about", option: this.$t("home.nav.Item1.option1")}, {
+                        path: "projects",
+                        option: this.$t("home.nav.Item1.option2")
+                    }],
+                },
+                sub2: {
+                    name:"sub2",
+                    icon_type: "ios-keypad",
+                    menu_name: this.$t("home.nav.Item2.I"),
+                    path_list: [{path: "1", option: this.$t("home.nav.Item2.option1")}],
+                },
+                sub3: {
+                    name:"sub3",
+                    icon_type: "ios-analytics",
+                    menu_name: this.$t("home.nav.Item3.I"),
+                    path_list: [{path: "2", option: this.$t("home.nav.Item3.option1")}],
+                },
             }
         }
     }

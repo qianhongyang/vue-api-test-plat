@@ -1,19 +1,19 @@
 <template>
-    <div>
+    <Submenu :name="sub.name" >
         <template slot="title">
-            <Icon :type="icon_type"/>
-            <span>{{menu_name}}</span>
+            <Icon :type="sub.icon_type"/>
+            <span>{{sub.menu_name}}</span>
         </template>
-        <MenuItem v-for="item in path_list" :key="item" :to="item.path">
+        <MenuItem v-for="item in sub.path_list" :key="item.path" :to="item.path" :name="item.path">
             {{ item.option }}
         </MenuItem>
-    </div>
+    </Submenu>
 </template>
 
 <script>
     export default {
         name: "Qmenu",
-        props: ["icon_type", "menu_name", "path_list"],
+        props: ["sub","path_list"],
     }
 </script>
 
