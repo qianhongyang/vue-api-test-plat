@@ -17,19 +17,19 @@
             return {
                 columns12: [
                     {
-                        title: 'Name',
+                        title: this.$t("projects.title.t1"),
                         slot: 'name'
                     },
                     {
-                        title: 'Age',
+                        title: this.$t("projects.title.t2"),
                         key: 'age'
                     },
                     {
-                        title: 'Address',
+                        title: this.$t("projects.title.t3"),
                         key: 'address'
                     },
                     {
-                        title: 'Action',
+                        title: this.$t("projects.title.t4"),
                         slot: 'action',
                         width: 150,
                         align: 'center'

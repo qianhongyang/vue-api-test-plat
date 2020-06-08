@@ -22,7 +22,15 @@ let zh = {
             },
         }
     },
-    title: '登录页'
+    title: '登录页',
+    projects: {
+        title: {
+            t1: "项目ID",
+            t2: "项目名称",
+            t3: "项目描述",
+            t4: "操作",
+        },
+    }
 };
 
 export default zh;

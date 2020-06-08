@@ -1,7 +1,7 @@
 <template>
     <div>
         <Input :placeholder="placeholder" style="width: auto"/>
-        <Button type="success" style="margin-left: 5px">search</Button>
+        <Button type="success" style="margin-left: 5px">搜索</Button>
         <Button type="success" style="margin-left: 5px">{{msg}}</Button>
     </div>
 </template>
