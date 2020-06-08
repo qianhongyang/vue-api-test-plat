@@ -55,7 +55,7 @@
             <hr style='border:1px inset #d7dde4;'> <!--分割线-->
             <Layout :style="{minHeight: '100vh'}">
                 <Sider ref="side1" collapsible :collapsed-width="78" v-model="isCollapsed">
-                    <Menu width="auto" :class="menuitemClasses" :theme="theme3" :active-name="sub1" :accordion="true">
+                    <Menu width="auto" :class="menuitemClasses" :theme="theme3" active-name="sub1" :accordion="true">
                         <component :is="comName"/>
                     </Menu>
                 </Sider>

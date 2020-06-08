@@ -1,7 +1,7 @@
 <template>
     <Table border :columns="columns12" :data="data6">
-        <template slot-scope="{ row }" slot="name">
-            <strong>{{ row.name }}</strong>
+        <template slot-scope="{ row }" slot="id">
+            <strong>{{ row.id }}</strong>
         </template>
         <template slot-scope="{ row, index }" slot="action">
             <Button type="primary" size="small" style="margin-right: 5px" @click="show(index)">查看</Button>
@@ -17,7 +17,7 @@
             show (index) {
                 this.$Modal.info({
                     title: 'User Info',
-                    content: `你打开我了<br>Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${this.data6[index].address}`
+                    content: `你打开我了<br>Name：${this.data6[index].name}<br>ID：${this.data6[index].id}<br>描述：${this.data6[index].describe}`
                 })
             },
             remove (index) {

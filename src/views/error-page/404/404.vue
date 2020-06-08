@@ -18,7 +18,7 @@
 <script>
 
     export default {
-        name: "404_cute",
+        name: "error_404",
         data(){
             return {
                 imageurl : "@/assets/images/error-page/cute_girl.jpeg"

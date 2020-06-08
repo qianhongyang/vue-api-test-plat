@@ -99,7 +99,7 @@ const router = new Router({
                     title: "您访问的网页出错啦！- 404",
                     icon: "@/assets/images/error-page/cute_girl.ico"
                 },
-                component: () => import('@/views/error-page/404/404_cute.vue')
+                component: () => import('@/views/error-page/404/404.vue')
             },
         ]
     }
