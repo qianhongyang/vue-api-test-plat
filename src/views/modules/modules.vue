@@ -18,33 +18,33 @@
             return {
                 columns12: [
                     {
-                        title: this.$t("projects.title.t1"),
+                        title: this.$t("modules.title.t1"),
                         slot: 'id'
                     },
                     {
-                        title: this.$t("projects.title.t2"),
+                        title: this.$t("modules.title.t2"),
                         key: 'name'
                     },
                     {
-                        title: this.$t("projects.title.t3"),
+                        title: this.$t("modules.title.t3"),
                         key: 'describe'
                     },
                     {
-                        title: this.$t("projects.title.t4"),
+                        title: this.$t("modules.title.t4"),
                         slot: 'action',
                         width: 150,
                         align: 'center'
                     }
                 ],
                 data6: [],
-                msg: this.$t("projects.title.msg"),
-                placeholder: this.$t("projects.title.pla"),
+                msg: this.$t("modules.title.msg"),
+                placeholder: this.$t("modules.title.pla"),
 
             }
         },
         mounted() {
             axios.request({
-                url: '/api/projects_list',//请求的地址
+                url: '/api/modules_list',//请求的地址
                 method: 'post',//请求的方式
             }).then(res => {
                 console.info('后台返回的数据', res.data);

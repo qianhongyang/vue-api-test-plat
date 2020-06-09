@@ -10,8 +10,10 @@ import 'nprogress/nprogress.css'  // 这个nprogress样式必须引入
 import axios from "@/libs/api.request";
 import Mock from '@/mock'
 import '@/my-theme/index.less';
+import echarts from 'echarts';
 
 Vue.use(iView);
+Vue.use(echarts);
 Vue.config.productionTip = false;
 
 require('@/mock/index.js');//此部分引入的是我们所编写的mockjs文档
@@ -24,5 +26,6 @@ new Vue({
   NProgress,
   axios,
   Mock,
+  echarts,
   render: h => h(App),
 }).$mount('#app');

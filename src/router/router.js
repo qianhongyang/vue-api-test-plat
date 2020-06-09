@@ -46,32 +46,27 @@ const router = new Router({
                     name: 'projects',
                     component: () => import(/* webpackChunkName: "about" */ '@/views/projects/projects'),
                     meta: {
-                        title: 'about',
+                        title: '项目管理',
                         requiresAuth: true,
                     },
                 },
                     {
+                        path: '/modules',
+                        name: 'modules',
+                        component: () => import(/* webpackChunkName: "about" */ '@/views/modules/modules'),
+                        meta: {
+                            title: '模块管理',
+                            requiresAuth: true,
+                        },
+                    },
+                    {
                         path: '/about',
                         name: 'about',
-                        component: () => import(/* webpackChunkName: "about" */ '@/views/About'),
+                        component: () => import(/* webpackChunkName: "about" */ '@/views/report/my_echart'),
                         meta: {
                             title: 'about',
                             requiresAuth: true,
                         },
-                        children: [
-                            {
-                                path: "2",
-                                name: "about2",
-                                component: () => import(/* webpackChunkName: "about" */ '@/views/About2'),
-                                meta: {requiresAuth: true}
-                            },
-                            {
-                                path: "3",
-                                name: "about3",
-                                component: () => import(/* webpackChunkName: "about" */ '@/views/About3'),
-                                meta: {requiresAuth: true}
-                            },
-                        ]
                     },
                 ]
             },
