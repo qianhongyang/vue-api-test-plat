@@ -35,7 +35,7 @@ const router = new Router({
             {
                 path: '/home',
                 name: 'home',
-                redirect: "/about",
+                redirect: "/my_report",
                 meta: {
                     title: '首页',
                     requiresAuth: true,
@@ -60,11 +60,20 @@ const router = new Router({
                         },
                     },
                     {
-                        path: '/about',
-                        name: 'about',
+                        path: '/report',
+                        name: 'report',
                         component: () => import(/* webpackChunkName: "about" */ '@/views/report/my_echart'),
                         meta: {
-                            title: 'about',
+                            title: 'report',
+                            requiresAuth: true,
+                        },
+                    },
+                    {
+                        path: '/my_report',
+                        name: 'my_report',
+                        component: () => import(/* webpackChunkName: "about" */ '@/views/report/iv-echarts'),
+                        meta: {
+                            title: 'my_report',
                             requiresAuth: true,
                         },
                     },

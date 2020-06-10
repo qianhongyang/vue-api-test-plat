@@ -27,7 +27,7 @@
                     menu_name: this.$t("home.nav.Item1.I"),
                     path_list: [
                         {
-                            path: "about",
+                            path: "my_report",
                             option: this.$t("home.nav.Item1.option1")
                         },
                         {
