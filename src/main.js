@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import iView from "view-design";
-//import 'view-design/dist/styles/iview.css'
-import router from "@/router/router";
+// import config from '@/config'
+import routers from "@/router/routers";
 import i18n from '@/i18n/i18n'
 import store from '@/store'
 import NProgress from 'nprogress' // 引入nprogress插件
@@ -15,12 +15,16 @@ import echarts from 'echarts';
 Vue.use(iView);
 Vue.use(echarts);
 Vue.config.productionTip = false;
+/**
+ * @description 全局注册应用配置
+ */
+// Vue.prototype.$config = config;
 
 require('@/mock/index.js');//此部分引入的是我们所编写的mockjs文档
 
 new Vue({
   iView,
-  router,
+  router:routers,
   i18n,
   store,
   NProgress,

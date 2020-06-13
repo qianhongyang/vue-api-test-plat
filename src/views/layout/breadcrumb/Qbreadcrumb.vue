@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <Breadcrumb separator=">">
-            <Icon type="ios-home-outline"></Icon>
-            <BreadcrumbItem v-for="(item,index) in list" :key="index" :to="item.path">{{item.name}}</BreadcrumbItem>
+    <div style=" height: 30px">
+        <Breadcrumb separator="->" style="transform:translateY(20%)" >
+            <Icon type="ios-home" size="18" />
+            <BreadcrumbItem v-for="(item,index) in list" :key="index" :to="item.path">{{item.meta.title}}</BreadcrumbItem>
         </Breadcrumb>
     </div>
 </template>

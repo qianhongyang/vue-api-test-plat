@@ -17,10 +17,10 @@ Vue.use(Router);
  *  notCache: (false) 设为true后页面在切换标签后不会缓存，如果需要缓存，无需设置这个字段，而且需要设置页面组件name属性和路由配置的name一致
  *  access: (null) 可访问该页面的权限数组，当前路由设置的权限会影响子路由
  *  icon: (-) 该页面在左侧菜单、面包屑和标签导航处显示的图标，如果是自定义图标，需要在图标名称前加下划线'_'
- *  beforeCloseName: (-) 设置该字段，则在关闭当前tab页时会去'@/router/before-close.js'里寻找该字段名对应的方法，作为关闭前的钩子函数
+ *  beforeCloseName: (-) 设置该字段，则在关闭当前tab页时会去'@/routers/before-close.js'里寻找该字段名对应的方法，作为关闭前的钩子函数
  * }
  */
-const router = new Router({
+const routers = new Router({
         mode: "history",
         routes: [
             {
@@ -73,7 +73,7 @@ const router = new Router({
                         name: 'my_report',
                         component: () => import(/* webpackChunkName: "about" */ '@/views/report/iv-echarts'),
                         meta: {
-                            title: 'my_report',
+                            title: '报告',
                             requiresAuth: true,
                         },
                     },
@@ -107,9 +107,9 @@ const router = new Router({
             },
         ]
     }
-)
+);
 
-router.beforeEach((to, from, next) => {
+routers.beforeEach((to, from, next) => {
     if (to.meta.title) {
         document.title = to.meta.title
     }
@@ -117,7 +117,7 @@ router.beforeEach((to, from, next) => {
     next()
 })
 
-router.afterEach(() => {
+routers.afterEach(() => {
     NProgress.done()
 })
-export default router;
+export default routers;

@@ -51,6 +51,7 @@
       "parser": "babel-eslint"
     },
     "rules": {
+      "no-self-assign": ["error", {"props": false}],
       "no-unused-vars": "off",
       "vue/no-parsing-error": [
         2,
